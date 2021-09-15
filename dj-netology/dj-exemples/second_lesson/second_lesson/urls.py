@@ -11,5 +11,6 @@ urlpatterns = [
     path('admin_email/', views.admin_email_view),
     path('info/', views.info_employee_view),
     path('since/<int:year>-<int:month>-<int:day>/', views.info_datetime_view),
-    path('since_dtc/<dtc:value>/',views.info_datetime_dtc_view)
+    path('since_dtc/<dtc:value>/', views.info_datetime_dtc_view),
+    path('home/', views.info_templates_view)
 ]
