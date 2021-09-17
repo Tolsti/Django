@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список игроков</title>
+</head>
+<body>
+
+<h1>Список игроков</h1>
+
+{% block content %}
+    <ul>
+    {% for player in players %}
+        <li>{{ player.name }}</li>
+    {% endfor %}
+    </ul>
+{% endblock %}
+
+</body>
+</html>
