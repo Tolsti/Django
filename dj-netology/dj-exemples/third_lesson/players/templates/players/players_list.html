@@ -8,11 +8,66 @@
 
 <h1>Список игроков</h1>
 
-{% block content %}
+{% block content1 %}
+    <b>Все игроки:</b>
     <ul>
-    {% for player in players %}
-        <li>{{ player.name }}</li>
-    {% endfor %}
+        {% for player in players %}
+            <li>{{ player.name }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block content2 %}
+    <b>Первые 3 игрока:</b>
+    <ul>
+        {% for player in players_first_four %}
+            <li>{{ player.id }}: {{ player.name }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block content3 %}
+    <b>Игроки с 5:</b>
+    <ul>
+        {% for player in players_after_four %}
+            <li>{{ player.id }}: {{ player.name }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block content4 %}
+    <b>Первых 5 игроков:</b>
+    <ul>
+        {% for player in players_only_five %}
+            <li>{{ player.id }}: {{ player.name }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block content5 %}
+    <b>Последние 5 игроков реверсивно:</b>
+    <ul>
+        {% for player in players_only_five_revers %}
+            <li>{{ player.id }}: {{ player.name }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block content6 %}
+    <b>Отфильтрованные игроки:</b>
+    <ul>
+        {% for player in players_filter_name %}
+            <li>{{ player.id }}: {{ player.name }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block content7 %}
+    <b>Отфильтрованные игроки в команде:</b>
+    <ul>
+        {% for player in players_filter_name %}
+            <li>{{ player.id }}: {{ player.name }}, команда: {{ player.team.name }}</li>
+        {% endfor %}
     </ul>
 {% endblock %}
 
