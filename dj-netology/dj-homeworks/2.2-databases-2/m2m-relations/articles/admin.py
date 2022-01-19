@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Article, Scope, Data
+from .models import Article, Scope, Relationship
 
 from django.core.exceptions import ValidationError
 
@@ -23,7 +23,7 @@ class RelationshipInlineFormset(BaseInlineFormSet):
 
 
 class RelationshipInline(admin.TabularInline):
-    model = Data
+    model = Relationship
     formset = RelationshipInlineFormset
 
 

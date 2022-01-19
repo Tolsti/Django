@@ -23,7 +23,7 @@ class Scope(models.Model):
         return self.topic
 
 
-class Data(models.Model):
+class Relationship(models.Model):
     article = models.ForeignKey(Article, on_delete=models.CASCADE)
     scope = models.ForeignKey(Scope, on_delete=models.CASCADE)
     is_main = models.BooleanField()
